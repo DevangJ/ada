@@ -1,11 +1,8 @@
-def linser(A, n, key, countcall):
-    if n == -1:
-        print("countcall = ", countcall)
+def binser(A, low, high, key):
+    if low > high:
         return False
-    elif A[len(A) - n] == key:
-        print("countcall = ", countcall)
-        return len(A) - n
-    return linser(A, n - 1, key, countcall + 1)
+    mid = (low + high) >> 1
+    return mid if A[mid] is key else binser(A, low, mid - 1, key) if A[mid] > key else binser(A, mid + 1, high, key)
 
 
 n = int(input("Enter size of array: "))
@@ -14,7 +11,7 @@ print("Enter ", n, " elements")
 for i in range(n):
     A.append(int(input()))
 key = int(input("Enter key: "))
-result = linser(A, n, key, 0)
+result = binser(A, 0, n-1, key)
 if result is False:
     print("Element not found")
 else:

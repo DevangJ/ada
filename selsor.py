@@ -1,14 +1,13 @@
 n = int(input("Enter size of array: "))
 A = []
-
 print("Enter ", n, " elements")
-
 for i in range(n):
     A.append(int(input()))
-
 for i in range(len(A)):
     A[i + A[i:].index(min(A[i:]))], A[i] = A[i], A[i + A[i:].index(min(A[i:]))]
     countloop += 1
+print("Sorted list is", A)
+print("countloop = ", countloop)
 
 # countloop = countswap = 0
 #
@@ -21,6 +20,3 @@ for i in range(len(A)):
 #     if i is not m:
 #         A[i], A[m] = A[m], A[i]
 #         countswap +=1
-
-print("Sorted list is", A)
-print("countloop = ", countloop)
