@@ -1,6 +1,7 @@
 def merge(left, right):
     A = []
     i = j = 0
+    global countloop
     while i < len(left) and j < len(right):
         if left[i] < right[j]:
             A.append(left[i])
@@ -8,6 +9,7 @@ def merge(left, right):
         else:
             A.append(right[j])
             j += 1
+        countloop += 1
     A.extend(left[i:])
     A.extend(right[j:])
     return A
@@ -50,8 +52,10 @@ def mergesort(A):
 
 A = []
 n = int(input("Enter array size: "))
+countloop = 0
 print("Enter ", n, " elements")
 for i in range(n):
         A.append(int(input()))
 A = mergesort(A)
 print(A)
+print("countloop = ", countloop)
