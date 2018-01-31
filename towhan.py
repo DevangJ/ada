@@ -1,3 +1,4 @@
+#import time
 def towerOfHanoi(n, from_peg, to_peg, aux_peg):
 	global countloop
 	if n is 1:
@@ -9,8 +10,13 @@ def towerOfHanoi(n, from_peg, to_peg, aux_peg):
 	countloop += 1
 	towerOfHanoi(n-1, aux_peg, to_peg, from_peg)
 
+
 countloop = 0
 n = int(input("Enter number of disks\n"))
 countloop += 1
+#x = time.time()
 towerOfHanoi(n, 'A', 'C', 'B')
-print("Number of function calls =", countloop) 
+#y = time.time()
+print("Number of function calls =", countloop)
+y -= x
+print(y)
