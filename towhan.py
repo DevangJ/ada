@@ -18,5 +18,5 @@ countloop += 1
 towerOfHanoi(n, 'A', 'C', 'B')
 #y = time.time()
 print("Number of function calls =", countloop)
-y -= x
-print(y)
+#y -= x
+#print(y)
